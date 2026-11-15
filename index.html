@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Assistant Feature Planner</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<!-- Vercel Speed Insights -->
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+<div class="app">
+<nav class="side" aria-label="Main">
+<div class="brand">Assistant Planner</div>
+<button class="nav" data-v="dash">Dashboard</button>
+<button class="nav" data-v="features">Features</button>
+<button class="nav" data-v="modules">Modules</button>
+<button class="nav" data-v="settings">Settings / Setup</button>
+<div class="note">Personal local planning tool<br>ব্যক্তিগত পরিকল্পনা টুল</div>
+</nav>
+<main class="main" id="main" tabindex="-1"></main>
+</div>
+
+<dialog id="dlg" aria-labelledby="dt">
+<form id="form" novalidate>
+<h2 id="dt">Feature</h2>
+<div class="two">
+<div class="fld"><label for="f-name">Name (English)</label><input id="f-name" aria-describedby="e-name"><div class="err" id="e-name"></div></div>
+<div class="fld"><label for="f-nameBn">নাম (বাংলা)</label><input id="f-nameBn" lang="bn"></div>
+</div>
+<div class="fld"><label for="f-desc">Description / বিবরণ</label><textarea id="f-desc" rows="3" aria-describedby="e-desc"></textarea><div class="err" id="e-desc"></div></div>
+<div class="two">
+<div class="fld"><label for="f-module">Module</label><select id="f-module"></select></div>
+<div class="fld"><label for="f-audience">Target audience</label><input id="f-audience" aria-describedby="e-audience"><div class="err" id="e-audience"></div></div>
+<div class="fld"><label for="f-priority">Priority</label><select id="f-priority"></select></div>
+<div class="fld"><label for="f-status">Status</label><select id="f-status"></select></div>
+<div class="fld"><label for="f-phase">Release phase</label><select id="f-phase"></select></div>
+</div>
+<div class="fld"><label for="f-notes">Notes / acceptance criteria</label><textarea id="f-notes" rows="3"></textarea></div>
+<div class="acts" style="justify-content:flex-end"><button type="button" class="btn ghost" id="cancel">Cancel</button><button type="submit" class="btn gold">Save</button></div>
+</form>
+</dialog>
+
+<dialog id="del" aria-labelledby="delt">
+<h2 id="delt">Delete feature?</h2>
+<p id="delp" class="sub"></p>
+<div class="acts" style="justify-content:flex-end"><button class="btn ghost" id="delno">Cancel</button><button class="btn red" id="delyes">Delete</button></div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
